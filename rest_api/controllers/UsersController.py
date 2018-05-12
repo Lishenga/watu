@@ -325,11 +325,11 @@ def get_customer_email_login(request):
             }
                 
             return Response(success)    
-    except:
-        e = sys.exc_info()[0]
+    except BaseException as e :
+        
         error={
             'status_code':500,
-            'message':'unexpected error',
+            'message':'error'+str(e),
             'data':{
                
             }
